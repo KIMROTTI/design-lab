@@ -1,3 +1,4 @@
+import Lab from "pages/lab/Lab";
 import Main from "pages/main/Main";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
@@ -8,6 +9,9 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Lab />} />
+          <Route path="/" element={<Main />} />
           <Route path="/" element={<Main />} />
         </Routes>
       </BrowserRouter>
