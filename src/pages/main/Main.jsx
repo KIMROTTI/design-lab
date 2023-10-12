@@ -8,20 +8,36 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  /* min-height: 100vh; */
+  background-color: black;
 `;
 
 const Container = styled.div`
   /* font-family: Helvetica; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: Impact, "Arial Narrow Bold", sans-serif;
+`;
+
+const Title = styled.h1`
+  font-size: 56px;
+  margin: 0;
+  margin-top: 24px;
+  color: white;
+`;
+
+const MenuBox = styled.div`
   width: 200px;
   position: relative;
-  margin: 50px auto;
-  font-family: Impact, "Arial Narrow Bold", sans-serif;
+  margin: 50px auto 0 auto;
 `;
 
 const MenuLink = styled(Link)`
   position: relative;
   text-decoration: noen;
-  color: black;
+  color: white;
   &:hover p {
     transform: translate(-50%, -50%) rotate(-27deg);
     font-size: 0;
@@ -32,8 +48,14 @@ const MenuLink = styled(Link)`
   &::before {
     content: "";
     width: 100%;
-    height: 200px;
-    background-color: black;
+    height: 100%;
+    background-color: white;
+    /* background-color: black; */
+    /* background: linear-gradient(
+      89.8deg,
+      rgb(39, 115, 255) 4.3%,
+      rgb(62, 211, 232) 101.4%
+    ); */
     position: absolute;
     top: 0;
     left: 0;
@@ -43,8 +65,14 @@ const MenuLink = styled(Link)`
   &::after {
     content: "";
     width: 100%;
-    height: 200px;
-    background-color: black;
+    height: 100%;
+    background-color: white;
+    /* background-color: black; */
+    /* background: linear-gradient(
+      89.8deg,
+      rgb(39, 115, 255) 4.3%,
+      rgb(62, 211, 232) 101.4%
+    ); */
     position: absolute;
     top: 0;
     left: -1px;
@@ -101,7 +129,7 @@ const MenuText = styled.span`
   font-size: 252px;
   position: absolute;
   left: 100px;
-  height: 200px;
+  height: 100%;
   display: block;
   line-height: 200px;
   transform: rotateY(90deg);
@@ -113,10 +141,10 @@ const MenuText = styled.span`
 const MenuSubText = styled.p`
   position: absolute;
   text-align: center;
-  top: 30%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) rotate(0);
-  color: white;
+  color: black;
   z-index: 10;
   font-size: 40px;
   transition: 0.3s cubic-bezier(0, 2.17, 0.83, 1.36) 0.3s;
@@ -126,31 +154,33 @@ const Main = () => {
   return (
     <Wrapper>
       <Container>
-        <MenuLink to="/">
-          <MenuButton>
-            <MenuText>HOME</MenuText>
-            <MenuSubText>HOME</MenuSubText>
-          </MenuButton>
-        </MenuLink>
-        <MenuLink to="/lab">
-          <MenuButton>
-            <MenuText>LAB</MenuText>
-            <MenuSubText>LAB</MenuSubText>
-          </MenuButton>
-        </MenuLink>
-        <MenuLink to="/contact">
-          <MenuButton>
-            <MenuText>CONTACT</MenuText>
-            <MenuSubText>CONTACT</MenuSubText>
-          </MenuButton>
-        </MenuLink>
+        <MenuBox>
+          <MenuLink to="/">
+            <MenuButton>
+              <MenuText>HOME</MenuText>
+              <MenuSubText>HOME</MenuSubText>
+            </MenuButton>
+          </MenuLink>
+          <MenuLink to="/lab">
+            <MenuButton>
+              <MenuText>LAB</MenuText>
+              <MenuSubText>LAB</MenuSubText>
+            </MenuButton>
+          </MenuLink>
+          <MenuLink to="/contact">
+            <MenuButton>
+              <MenuText>CONTACT</MenuText>
+              <MenuSubText>CONTACT</MenuSubText>
+            </MenuButton>
+          </MenuLink>
 
-        <MenuLink to="/about">
-          <MenuButton>
-            <MenuText>ABOUT</MenuText>
-            <MenuSubText>ABOUT</MenuSubText>
-          </MenuButton>
-        </MenuLink>
+          <MenuLink to="/about">
+            <MenuButton>
+              <MenuText>ABOUT</MenuText>
+              <MenuSubText>ABOUT</MenuSubText>
+            </MenuButton>
+          </MenuLink>
+        </MenuBox>
       </Container>
     </Wrapper>
   );
