@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { Mobile, Pc } from "styles/device/device";
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,6 +11,7 @@ const Wrapper = styled.div`
   height: 100%;
   /* min-height: 100vh; */
   background-color: black;
+  overflow: hidden;
 `;
 
 const Container = styled.div`
@@ -32,6 +34,10 @@ const MenuBox = styled.div`
   width: 200px;
   position: relative;
   margin: 50px auto 0 auto;
+
+  @media screen and (max-width: 1200px) {
+    /* width: 100px; */
+  }
 `;
 
 const MenuLink = styled(Link)`
@@ -114,6 +120,9 @@ const MenuLink = styled(Link)`
     left: auto;
     transform-origin: right;
   }
+  @media screen and (max-width: 1200px) {
+    /* width: 100px; */
+  }
 `;
 
 const MenuButton = styled.div`
@@ -136,6 +145,7 @@ const MenuText = styled.span`
   transform-origin: left;
   transition: 0.5s;
   overflow: hidden;
+  width: max-content;
 `;
 
 const MenuSubText = styled.p`
@@ -152,37 +162,76 @@ const MenuSubText = styled.p`
 `;
 const Main = () => {
   return (
-    <Wrapper>
-      <Container>
-        <MenuBox>
-          <MenuLink to="/">
-            <MenuButton>
-              <MenuText>HOME</MenuText>
-              <MenuSubText>HOME</MenuSubText>
-            </MenuButton>
-          </MenuLink>
-          <MenuLink to="/lab">
-            <MenuButton>
-              <MenuText>LAB</MenuText>
-              <MenuSubText>LAB</MenuSubText>
-            </MenuButton>
-          </MenuLink>
-          <MenuLink to="/contact">
-            <MenuButton>
-              <MenuText>CONTACT</MenuText>
-              <MenuSubText>CONTACT</MenuSubText>
-            </MenuButton>
-          </MenuLink>
+    <>
+      <Pc>
+        {" "}
+        <Wrapper>
+          <Container>
+            <MenuBox>
+              <MenuLink to="/">
+                <MenuButton>
+                  <MenuText>HOME</MenuText>
+                  <MenuSubText>HOME</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+              <MenuLink to="/lab">
+                <MenuButton>
+                  <MenuText>LAB</MenuText>
+                  <MenuSubText>LAB</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+              <MenuLink to="/contact">
+                <MenuButton>
+                  <MenuText>CONTACT</MenuText>
+                  <MenuSubText>CONTACT</MenuSubText>
+                </MenuButton>
+              </MenuLink>
 
-          <MenuLink to="/about">
-            <MenuButton>
-              <MenuText>ABOUT</MenuText>
-              <MenuSubText>ABOUT</MenuSubText>
-            </MenuButton>
-          </MenuLink>
-        </MenuBox>
-      </Container>
-    </Wrapper>
+              <MenuLink to="/about">
+                <MenuButton>
+                  <MenuText>ABOUT</MenuText>
+                  <MenuSubText>ABOUT</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+            </MenuBox>
+          </Container>
+        </Wrapper>
+      </Pc>
+      <Mobile>
+        {" "}
+        <Wrapper>
+          <Container>
+            <MenuBox>
+              <MenuLink to="/">
+                <MenuButton>
+                  <MenuText>HOME</MenuText>
+                  <MenuSubText>HOME</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+              <MenuLink to="/lab">
+                <MenuButton>
+                  <MenuText>LAB</MenuText>
+                  <MenuSubText>LAB</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+              <MenuLink to="/contact">
+                <MenuButton>
+                  <MenuText>CONTACT</MenuText>
+                  <MenuSubText>CONTACT</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+
+              <MenuLink to="/about">
+                <MenuButton>
+                  <MenuText>ABOUT</MenuText>
+                  <MenuSubText>ABOUT</MenuSubText>
+                </MenuButton>
+              </MenuLink>
+            </MenuBox>
+          </Container>
+        </Wrapper>
+      </Mobile>
+    </>
   );
 };
 

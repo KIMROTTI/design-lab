@@ -12,9 +12,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/" element={<Lab />} />
-          <Route path="/" element={<Main />} />
-          <Route path="/" element={<Main />} />
+          <Route path="/lab/*" element={<Lab />} />
         </Routes>
       </BrowserRouter>
     </div>

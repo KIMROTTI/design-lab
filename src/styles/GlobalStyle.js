@@ -8,6 +8,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    font-size: 16px;
     margin: 0px;
     background-color: black;
     /* font-family: "Helvetica", "Arial", sans-serif; */
